@@ -1,0 +1,37 @@
+footer  {
+    background-color: hsl(0, 0%, 0%);
+    color: #ede7f6;
+  
+  }
+  
+  .text-muted {
+    color: #6c757d !important;
+  }
+  #principal {
+    background-image: url(../assets/Monitoria-2.jpg);
+    background-size: 100% 100%;
+    background-repeat: repeat;
+    /* background-position: center; */
+  }
+  
+  .main-text {
+    position: 'fixed';
+    top: '0';
+    left: '0';
+    --bs-bg-opacity:0.45;
+    color: aliceblue !important;
+  }
+  
+  .card-title {
+    color: aliceblue !important;
+  }
+  
+  .img-fluid, .mx-auto {
+    height: 50%;
+  }
+  
+  .info-div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }

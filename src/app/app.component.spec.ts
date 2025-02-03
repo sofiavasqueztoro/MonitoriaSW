@@ -1,10 +1,21 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BookListComponent } from './book/book-list/book-list.component';
+import '@angular/localize/init'
+import { RouterModule } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [
+        RouterModule.forRoot([]),
+        HttpClientModule
+      ],
+      declarations: [
+        AppComponent,
+        BookListComponent
+      ],
     }).compileComponents();
   });
 
@@ -14,16 +25,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'my-angular-project' title`, () => {
+  it(`should have as title 'bookstore'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('my-angular-project');
+    expect(app.title).toEqual('bookstore');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, my-angular-project');
-  });
 });

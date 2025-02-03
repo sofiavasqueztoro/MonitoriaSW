@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div>
+    <br />
+
+    <div class="selected-book rounded" *ngIf="selected">
+      <app-book-detail [bookDetail]="selectedBook"></app-book-detail>
+    </div>
+
+    <br />
+    <div class="row">
+      <div class="text-end">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+      <div>
+        <input
+          class="form-control"
+          type="text"
+          name="search"
+          [(ngModel)]="searchedBook"
+          autocomplete="off"
+          placeholder="&#61442;  Search by book name or author"
+        />
+      </div>
+    </div>
+    <div>
+      <div class="row"  style="display: flex; justify-content: center; align-items: center;">
+        <div
+          *ngFor="
+            let book of books
+            | paginate : { itemsPerPage: 10, currentPage: p }
+            | filter : searchedBook
+          "
+          class="col"
+          style="display: flex; justify-content: center; align-items: center; max-width: 15rem;"
+
+        >
+
+          <div class="book-card card p-2 mb-2" style="width: 15rem; height: 33rem;">
+            <img
+              class="card-img-top"
+              src="{{ book.image }}"
+              alt="{{ book.name }}"
+              (click)="onSelected(book)"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ book.name }}</h5>
+              <p class="card-text">[{{ book.editorial.name }}]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <br />
+      <br />
+    </div>
+    <br />
+    <br />
+  </div>
+</div>
