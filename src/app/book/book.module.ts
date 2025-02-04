@@ -7,7 +7,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BookRoutingModule } from './book-routing.module';
-import { CustomFilterPipe } from './custom-filter-pipe.pipe';
+import { CustomFilterPipeModule } from './custom-filter.pipe.module';
 
 
 
@@ -21,13 +21,13 @@ import { CustomFilterPipe } from './custom-filter-pipe.pipe';
   imports: [
     CommonModule,
     RouterModule,
-    CustomFilterPipe,
+    CustomFilterPipeModule,
     BookRoutingModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     FormsModule
   ],
   exports: [BookListComponent],
-  providers: [CustomFilterPipe]
+  providers: [CustomFilterPipeModule]
 })
 export class BookModule { }

@@ -1,9 +1,11 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform, Injectable } from "@angular/core";
 
 @Pipe({
-  name: 'customFilter',
-  standalone: true
+  name: "filter",
+  pure: false,
+  standalone:false
 })
+@Injectable()
 export class CustomFilterPipe implements PipeTransform {
 
   transform(items: any, term: string, excludes: any = []): any {

@@ -12,7 +12,6 @@ import { BookModule } from './book/book.module';
 import { EditorialModule } from './editorial/editorial.module';
 import { HttpErrorInterceptorService } from './interceptors/http-error-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,7 @@ import { RouterModule } from '@angular/router';
     ),
     NgxPaginationModule,
     FormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
